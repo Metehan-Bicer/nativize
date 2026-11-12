@@ -48,6 +48,14 @@ Then ask your agent: *"nativize the home screen"*, *"this screen looks AI-made, 
 
 `scan.mjs` has no dependencies and runs on Node 18 or newer. Use it on its own or in CI.
 
+Without cloning:
+
+```bash
+npx github:Metehan-Bicer/nativize path/to/your-app
+```
+
+From a clone:
+
 ```bash
 node skills/nativize/scripts/scan.mjs path/to/your-app
 node skills/nativize/scripts/scan.mjs path/to/your-app --json
