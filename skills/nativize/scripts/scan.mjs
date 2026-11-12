@@ -2,7 +2,7 @@
 // nativize scan: finds code-level tells of an AI-made mobile UI in React Native, Expo and SwiftUI projects.
 // No dependencies. Usage: node scan.mjs [project-root] [--json] [--min-score N]
 
-import { readdirSync, readFileSync, statSync } from "node:fs";
+import { readdirSync, readFileSync, realpathSync, statSync } from "node:fs";
 import { extname, join, relative, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
@@ -294,4 +294,6 @@ function main(argv) {
   if (min !== null && result.score < min) process.exitCode = 1;
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) main(process.argv);
+// Run as a CLI also when called through a symlink such as node_modules/.bin/nativize (npx).
+const invoked = (() => { try { return pathToFileURL(realpathSync(process.argv[1] ?? "")).href; } catch { return ""; } })();
+if (import.meta.url === invoked) main(process.argv);
