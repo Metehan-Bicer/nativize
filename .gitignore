@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+nativize-shots/
+examples/*/node_modules/
+examples/*/ios/
+examples/*/android/
+examples/*/.expo/

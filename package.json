@@ -1,0 +1,14 @@
+{
+  "name": "nativize",
+  "version": "0.1.0",
+  "description": "Make a vibecoded mobile app look and feel native. An agent skill and a scanner for React Native, Expo and SwiftUI.",
+  "type": "module",
+  "bin": { "nativize": "skills/nativize/scripts/scan.mjs" },
+  "files": ["skills"],
+  "scripts": { "test": "node --test test/*.test.mjs" },
+  "engines": { "node": ">=18" },
+  "license": "MIT",
+  "author": "Metehan Biçer",
+  "repository": { "type": "git", "url": "git+https://github.com/Metehan-Bicer/nativize.git" },
+  "keywords": ["react-native", "expo", "swiftui", "ios", "android", "ui", "design", "agent-skill", "claude-code", "codex"]
+}

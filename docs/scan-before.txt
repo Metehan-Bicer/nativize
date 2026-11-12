@@ -1,0 +1,59 @@
+nativize scan  examples/habit-demo/src/BeforeHome.tsx
+1 UI files, 26 findings, score 8/100
+
+[high] Gradient used on chrome (3)
+  examples/habit-demo/src/BeforeHome.tsx:13  <LinearGradient colors={['#7C3AED', '#EC4899']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={styles.header}>
+  examples/habit-demo/src/BeforeHome.tsx:47  <LinearGradient colors={['#F59E0B', '#EC4899', '#8B5CF6']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={styles.pro
+  examples/habit-demo/src/BeforeHome.tsx:53  <LinearGradient colors={['#8B5CF6', '#EC4899']} style={styles.fabInner}>
+  fix: Use a flat system background or the single accent color; keep gradients for real content only.
+
+[high] Font scaling turned off (2)
+  examples/habit-demo/src/BeforeHome.tsx:14  <Text style={styles.hello} allowFontScaling={false}>Hey there, superstar! 👋</Text>
+  examples/habit-demo/src/BeforeHome.tsx:15  <Text style={styles.headline} allowFontScaling={false}>Unlock your full potential 🚀</Text>
+  fix: Let text scale. Cap with maxFontSizeMultiplier or a DynamicTypeSize range only where layout would break.
+
+[medium] Default AI purple, violet or pink (5)
+  examples/habit-demo/src/BeforeHome.tsx:13  <LinearGradient colors={['#7C3AED', '#EC4899']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} style={styles.header}>
+  examples/habit-demo/src/BeforeHome.tsx:47  <LinearGradient colors={['#F59E0B', '#EC4899', '#8B5CF6']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={styles.pro
+  examples/habit-demo/src/BeforeHome.tsx:53  <LinearGradient colors={['#8B5CF6', '#EC4899']} style={styles.fabInner}>
+  examples/habit-demo/src/BeforeHome.tsx:70  card: { backgroundColor: '#1E1638', borderRadius: 24, padding: 6, marginBottom: 14, shadowColor: '#8B5CF6', shadowOpacit
+  examples/habit-demo/src/BeforeHome.tsx:74  cardSub: { color: '#A78BFA', fontSize: 13, marginTop: 3 },
+  fix: Pick one accent from the product's own world and use system colors for the rest.
+
+[medium] Emoji used as UI text or icon (5)
+  examples/habit-demo/src/BeforeHome.tsx:14  <Text style={styles.hello} allowFontScaling={false}>Hey there, superstar! 👋</Text>
+  examples/habit-demo/src/BeforeHome.tsx:15  <Text style={styles.headline} allowFontScaling={false}>Unlock your full potential 🚀</Text>
+  examples/habit-demo/src/BeforeHome.tsx:22  <Text style={styles.statNum}>🔥 12</Text>
+  examples/habit-demo/src/BeforeHome.tsx:26  <Text style={styles.statNum}>⚡ 86%</Text>
+  examples/habit-demo/src/BeforeHome.tsx:32  <Text style={styles.section}>✨ YOUR HABITS ✨</Text>
+  fix: Use one icon family (SF Symbols, Material Symbols) and plain labels.
+
+[medium] Font size off the platform type ramp (3)
+  examples/habit-demo/src/BeforeHome.tsx:54  <Text style={{ color: '#fff', fontSize: 30, fontWeight: '300' }}>+</Text>
+  examples/habit-demo/src/BeforeHome.tsx:72  emoji: { fontSize: 30 },
+  examples/habit-demo/src/BeforeHome.tsx:73  cardTitle: { color: '#fff', fontSize: 18, fontWeight: '800' },
+  fix: Use the iOS text styles or the Material type scale (11, 12, 13, 15, 17, 20, 22, 28, 34 on iOS).
+
+[medium] Colored glow shadow (3)
+  examples/habit-demo/src/BeforeHome.tsx:70  card: { backgroundColor: '#1E1638', borderRadius: 24, padding: 6, marginBottom: 14, shadowColor: '#8B5CF6', shadowOpacit
+  examples/habit-demo/src/BeforeHome.tsx:76  checkDone: { backgroundColor: '#8B5CF6', shadowColor: '#EC4899', shadowOpacity: 0.9, shadowRadius: 10 },
+  examples/habit-demo/src/BeforeHome.tsx:80  fab: { position: 'absolute', bottom: 40, alignSelf: 'center', shadowColor: '#EC4899', shadowOpacity: 0.9, shadowRadius: 
+  fix: Remove colored shadows. Separate surfaces with background layers, not glow.
+
+[medium] Marketing voice inside the app (2)
+  examples/habit-demo/src/BeforeHome.tsx:15  <Text style={styles.headline} allowFontScaling={false}>Unlock your full potential 🚀</Text>
+  examples/habit-demo/src/BeforeHome.tsx:49  <Text style={styles.proText}>Supercharge your habits with AI insights!</Text>
+  fix: Short, specific copy. Buttons say what happens.
+
+[medium] Dark mode not handled (1)
+  .  no color scheme handling found
+  fix: Use system colors or useColorScheme, and check every screen in dark mode.
+
+[low] All caps tracked labels (1)
+  examples/habit-demo/src/BeforeHome.tsx:68  statLabel: { color: '#FBCFE8', fontSize: 11, fontWeight: '700', letterSpacing: 2, textTransform: 'uppercase', marginTop:
+  fix: Sentence case; let the platform decide where caps belong.
+
+[low] Many font sizes typed in by hand (1)
+  examples/habit-demo/src/BeforeHome.tsx:42  12 occurrences
+  fix: Define one type ramp (or use text styles) and reuse it so Dynamic Type works.
+
